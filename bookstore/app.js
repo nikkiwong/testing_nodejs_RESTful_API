@@ -4,12 +4,14 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 //connect to Mongoose
-mongoose.connect('mongodb://localhost/bookstore');
+var promise = mongoose.connect('mongodb://localhost/bookstore');
 var db = mongoose.connection;
 
 app.get('/', function(req, resp){
-    resp.send("Hello and welcome to my bookstore app");
+    resp.send("Please use /api/books or /api");
 });
+
+app.get('/api/genres');
 
 app.listen(3000);
 console.log("Running on port 3000...")

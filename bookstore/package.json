@@ -1,6 +1,7 @@
 {
   "name": "bookstore",
   "version": "1.0.0",
+  "private": true,
   "description": "Simple bookstore app",
   "main": "app.js",
   "scripts": {
@@ -9,7 +10,7 @@
   "dependencies": {
     "express":"*", 
     "body-parser": "*",  
-    "mongoose": "*"
+    "mongoose": "4.10.8"
   },
   "author": "Nikki Wong",
   "license": "ISC"
