@@ -43,5 +43,13 @@ var Book = module.exports = mongoose.model('Book', bookSchema)
 //module.exports means it is accessible from the outside
 //callback is through the route file, limit is whatever that is passed from parameters
 module.exports.getBooks = function(callback, limit){
-    Book.find(callback).limit(limit); //gets genre
+    Book.find(callback).limit(limit); //gets books
+}
+module.exports.getBookById = function(id, callback){
+    Book.findById(id, callback); //gets book by id, we got rid of limit because we are only returning one
+}
+
+//add book
+module.exports.getBooks = function(book, callback){
+    Book.create(book, callback); //genre = data from the form
 }

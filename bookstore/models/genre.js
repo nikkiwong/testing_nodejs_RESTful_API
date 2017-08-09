@@ -21,3 +21,8 @@ var Genre = module.exports = mongoose.model('Genre', genreSchema)
 module.exports.getGenres = function(callback, limit){
     Genre.find(callback).limit(limit); //gets genre
 }
+
+//add genre
+module.exports.getGenres = function(genre, callback){
+    Genre.create(genre, callback); //genre = data from the form
+}
